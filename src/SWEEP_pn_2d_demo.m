@@ -9,7 +9,7 @@ s.m_pos0=[0;0]; s.m_vel0=s.mvel0_mod*[cosd(s.mCoG0);sind(s.mCoG0)];
 % --- base scenario TARGET ---
 s.tvel0_mod = 250; s.tCoG0=-10; % m/s and deg
 s.t_pos0=[6000;0]; s.t_vel0=-s.tvel0_mod*[cosd(s.tCoG0);sind(s.tCoG0)];
-s.t_maneuver_on=0; s.t_maneuver_off=25; s.t_maneuver_acc=-30;
+s.t_maneuver_on=5; s.t_maneuver_off=25; s.t_maneuver_acc=-30;
 
 % --- base scenario GENERAL ---
 s.r_impact_threshold=20; s.min_Vc_for_tgo=5;
