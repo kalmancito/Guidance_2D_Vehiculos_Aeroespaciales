@@ -3,13 +3,13 @@ clear; clc; close all
 % --- base scenario MISSILE ---
 s.dt = 0.01; s.Tmax = 240;
 s.N0 = 8; s.a_max = 100; s.use_actuator = true;
-s.mvel0_mod = 300; s.mCoG0=5; % m/s and deg
+s.mvel0_mod = 300; s.mCoG0=0; % m/s and deg
 s.m_pos0=[0;0]; s.m_vel0=s.mvel0_mod*[cosd(s.mCoG0);sind(s.mCoG0)];
 
 % --- base scenario TARGET ---
-s.tvel0_mod = 250; s.tCoG0=-10; % m/s and deg
+s.tvel0_mod = 250; s.tCoG0=0; % m/s and deg
 s.t_pos0=[6000;0]; s.t_vel0=-s.tvel0_mod*[cosd(s.tCoG0);sind(s.tCoG0)];
-s.t_maneuver_on=0; s.t_maneuver_off=25; s.t_maneuver_acc=-30;
+s.t_maneuver_on=0; s.t_maneuver_off=25; s.t_maneuver_acc=0;
 
 % --- base scenario GENERAL ---
 s.r_impact_threshold=20; s.min_Vc_for_tgo=5;
@@ -23,7 +23,7 @@ amax_missile_vec = [50, 100];
 aT_vec           = s.t_maneuver_acc;   % o [10 20 30] si quieres barrer también
 
 % --- opciones de salida ---
-SAVE_FIGS = false;  
+SAVE_FIGS = 1;  
 OUTDIR = "fig";
 if SAVE_FIGS && ~exist(OUTDIR,'dir')
     mkdir(OUTDIR);
