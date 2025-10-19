@@ -3,10 +3,12 @@ clear; clc; close all
 % --- base scenario MISSILE ---
 s.dt = 0.01; s.Tmax = 240;
 s.N0 = 8; s.a_max = 100; s.use_actuator = true;
-s.m_pos0=[0;0]; s.m_vel0=300*[cosd(5);sind(5)];
+s.mvel0_mod = 300; s.mCoG0=5; % m/s and deg
+s.m_pos0=[0;0]; s.m_vel0=s.mvel0_mod*[cosd(s.mCoG0);sind(s.mCoG0)];
 
 % --- base scenario TARGET ---
-s.t_pos0=[6000;0]; s.t_vel0=-250*[cosd(-10);sind(-10)];
+s.tvel0_mod = 250; s.tCoG0=-10; % m/s and deg
+s.t_pos0=[6000;0]; s.t_vel0=-s.tvel0_mod*[cosd(s.tCoG0);sind(s.tCoG0)];
 s.t_maneuver_on=0; s.t_maneuver_off=25; s.t_maneuver_acc=-30;
 
 % --- base scenario GENERAL ---
