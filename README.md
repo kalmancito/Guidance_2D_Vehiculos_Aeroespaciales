@@ -192,5 +192,3 @@ This simulator follows the classical 2D proportional navigation formulation foun
 ---
 
 **Author:** Miguel Ángel Gómez López  
-**INTA – PNTLab**  
-*(Adapted version for research & didactic use)*
